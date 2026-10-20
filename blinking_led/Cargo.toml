@@ -1,0 +1,18 @@
+[package]
+name = "blinking_led"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cortex-m = { version = "0.7.7", features = ["critical-section-single-core"] }
+cortex-m-rt = "0.7"
+cortex-m-semihosting = "0.6.0"
+embedded-hal = "1.0.0"
+mspm0l2228-hal = { version = "0.1.0", path = "../../hal/hal" }
+panic-halt = "1"
+
+[profile.release]
+opt-level = "s"      # optimise for size
+lto = true           # link-time optimisation: smaller binary
+codegen-units = 1    # better optimisation
+debug = true         # keep debug info (it lives in the ELF, not in flash)
