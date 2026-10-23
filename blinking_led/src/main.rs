@@ -1,6 +1,5 @@
 /*
-*   Tests GPIO and Trng
-*   Randomly tries lighting all 3 LEDS
+*  Blinking red led
 * */
 
 #![no_std]
